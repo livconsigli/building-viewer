@@ -23,11 +23,11 @@ scene.add(new THREE.DirectionalLight(0xffffff, 2));
 scene.add(new THREE.AmbientLight(0x404040));
 
 // 🔴 Always-visible debug cube
-const debugBox = new THREE.Mesh(
-  new THREE.BoxGeometry(10, 10, 10),
-  new THREE.MeshStandardMaterial({ color: 0xff0000 })
-);
-scene.add(debugBox);
+//const debugBox = new THREE.Mesh(
+  // new THREE.BoxGeometry(10, 10, 10),
+  // new THREE.MeshStandardMaterial({ color: 0xff0000 })
+// );
+//scene.add(debugBox);
 
 // Animate always, with optional model rotation
 let model = null;
