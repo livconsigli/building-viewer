@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const container = document.getElementById('viewer');
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xffffff); // white background
 const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
 camera.position.set(0, 25, 60);
 camera.lookAt(0, 0, 0);
@@ -14,6 +15,17 @@ container.appendChild(renderer.domElement);
 
 scene.add(new THREE.DirectionalLight(0xffffff, 2));
 scene.add(new THREE.AmbientLight(0x404040));
+
+scene.add(new THREE.DirectionalLight(0xffffff, 2));
+scene.add(new THREE.AmbientLight(0x404040));
+
+// 🔴 Debug box to confirm rendering works
+const box = new THREE.Mesh(
+  new THREE.BoxGeometry(10, 10, 10),
+  new THREE.MeshStandardMaterial({ color: 0xff0000 })
+);
+scene.add(box);
+
 
 const loader = new GLTFLoader();
 loader.load('/models/Building.glb', (gltf) => {
